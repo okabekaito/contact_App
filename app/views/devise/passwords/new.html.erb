@@ -1,0 +1,19 @@
+<div class = "d-flex justify-content-center text-center mt-5">
+  <div class ="card col-5 bg-light mt-5">
+    <h2>パスワードを忘れたの?</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "メールを送る",class: 'form-control　btn btn-primary col-12' %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
