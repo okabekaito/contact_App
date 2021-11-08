@@ -1,9 +1,9 @@
 ja:
   activerecord:
     models:
-      note: ノート
+      post:
     attributes:
-      note:
+      post:
         title: タイトル
         author: 作成者
         created_at: 作成日
