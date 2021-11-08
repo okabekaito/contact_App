@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      note: ノート
+    attributes:
+      note:
+        title: タイトル
+        author: 作成者
+        created_at: 作成日
+        content: 内容
