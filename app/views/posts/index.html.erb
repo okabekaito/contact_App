@@ -1,12 +1,12 @@
 <h1>投稿一覧</h1>
 <div class ="d-flex justify-content-center col-10 flex-wrap">
     <% @posts.each do |post| %>
-      <a href="/users/<%= post.user.id %>"><%= post.user.email %></a>
-  <div class  = "bg-light  border border-dark rounded-pill col-6 d-flex flex-nowrap mb-1">
-      <p class = "mt-3"><a href="/posts/<%= post.id %>"><%= post.content %></a></p>
-  </div>
-      <button type="button" class="btn btn-outline-secondary mr-2 ml-2"><%= link_to 'Edit', edit_post_path(post) %></button>
-      <button class = "btn btn-outline-danger "><%= link_to 'Destroy', post, method: :delete, data: { confirm: '削除してよろしいですか？' } %></button>
+            <a href="/users/<%= post.user.id %>"><%= post.user.email %></a>
+        <div class  = "bg-light  border border-dark rounded-pill col-6 d-flex flex-nowrap mb-1">
+            <p class = "mt-3"><a href="/posts/<%= post.id %>"><%= post.content %></a></p>
+        </div>
+            <button type="button" class="btn btn-outline-secondary mr-2 ml-2"><%= link_to 'Edit', edit_post_path(post) %></button>
+            <button class = "btn btn-outline-danger "><%= link_to 'Destroy', post, method: :delete, data: { confirm: '削除してよろしいですか？' } %></button>
     <%end%>
 
 </div>
