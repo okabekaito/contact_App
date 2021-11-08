@@ -2,7 +2,7 @@
 <div class = "field  d-flex justify-content-center col-12 flex-wrap mt-5 text-center">
   <div class ="card col-6">  
 
-    <h3><%= @post.user.email %></h3>
+    <h3><%= @post.user.nickname %></h3>
     <h3><%= @post.content %></h3>
     <div class = "row">
         <div class = "col-12">
@@ -16,7 +16,7 @@
     <h4 class ="card-text mt-5">コメント覧</h4>
     <% @comments.each do |c| %>
       <div>
-        <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
+        <a href="/users/<%= @post.user.id %>"><%= c.user.nickname %></a>
         <%= c.content %>
         <hr>
       </div>
