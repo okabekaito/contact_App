@@ -26,16 +26,11 @@
 
 <br>
 
-<%= link_to 'New Post', posts_path %>
+<%= link_to 'New Post', new_post_path %>
 <h1>コメントサンプル</h1>
 <% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
   <%= link_to "マイページへ", user_path(current_user.id) %>
-  <h2>投稿する</h2>
-  <%= form_for @post do |f| %>
-    <%= f.text_field :content %>
-    <%= f.submit %>
-  <% end %>
   <hr>
   <h2>投稿一覧</h2>
   <% @posts.each do |post| %>
