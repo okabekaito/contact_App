@@ -8,5 +8,7 @@
             <button type="button" class="btn btn-outline-secondary mr-2 ml-2"><%= link_to 'Edit', edit_post_path(post) %></button>
             <button class = "btn btn-outline-danger "><%= link_to 'Destroy', post, method: :delete, data: { confirm: '削除してよろしいですか？' } %></button>
     <%end%>
-
+</div>
+<div class = "d-flex justify-content-center flex-wrap col-12 mb-5 mt-5">
+    <%= paginate @posts%>
 </div>
