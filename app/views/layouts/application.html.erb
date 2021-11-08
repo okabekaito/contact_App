@@ -10,6 +10,28 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <nav class="navbar  bg-secondary">
+              <%=link_to"Contact App",posts_path,class: "navbar-brand text-white"%>
+      <div class="d-flex flex-nowrap ">
+              <%= link_to "投稿する", new_post_path, class: "nav-link text-white text-cent"%><i class="fas fa-book-open text-white d-flex align-items-center mr-5"></i>
+              <%= link_to "マイページへ", user_path(current_user.id) , class: "nav-link text-white "%>
+              <%= link_to "ログアウト", destroy_user_session_path, :method => :delete, class: "nav-link text-white " %>
+        </ul>
+      </div>
+    </nav>
+  <%end%>
+        <% if flash[:notice] %>
+          <div class="alert alert-success" role="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+        <%if flash[:alert]%>
+          <div class="alert alert-danger" role="alert">
+            <%= flash[:alert]%>
+          </div>
+        <% end %>
     <%= yield %>
+
   </body>
 </html>

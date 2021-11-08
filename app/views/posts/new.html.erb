@@ -1,10 +1,5 @@
-<h1>New Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Back', posts_path %>
+<div class = "field  d-flex justify-content-center col-12 flex-wrap mt-5">  
   <h2>投稿する</h2>
-  <%= form_for @post do |f| %>
-    <%= f.text_field :content %>
-    <%= f.submit %>
-  <% end %>
+</div>
+
+  <%= render 'form', post: @post %>

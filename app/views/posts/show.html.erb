@@ -1,35 +1,26 @@
-<p id="notice"><%= notice %></p>
+    <h1>投稿詳細ページ</h1>
+<div class = "field  d-flex justify-content-center col-12 flex-wrap mt-5">
+  <div class ="card col-6">  
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+    <h3><%= @post.user.email %></h3>
+    <h3><%= @post.content %></h3>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+    <h2 class ="card-text">コメント一覧</h2>
+    <% @comments.each do |c| %>
+      <div>
+        <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
+        <%= c.content %>
+        <hr>
+      </div>
+    <% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-<h1>投稿詳細ページ</h1>
-<h3><%= @post.user.email %></h3>
-<h3><%= @post.content %></h3>
+    <%= form_for [@post, @comment] do |f| %>
+      <%= f.text_field :content %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+      <br>
+      <%= f.submit 'コメントする' %>
+    <% end %>
 
-<h2>コメント一覧</h2>
-<% @comments.each do |c| %>
-  <div>
-    <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
-    <%= c.content %>
-    <hr>
+    <%= link_to "ホームへ戻る", posts_path %>
   </div>
-<% end %>
-
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.text_field :content %>
-    <%= f.hidden_field :post_id, value: @post.id %>
-  <br>
-  <%= f.submit 'コメントする' %>
-<% end %>
-
-<%= link_to "ホームへ戻る", posts_path %>
+</div>

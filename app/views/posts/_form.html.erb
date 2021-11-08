@@ -11,17 +11,15 @@
     </div>
   <% end %>
 
+<div class = "field  d-flex justify-content-center col-12 flex-wrap mt-5"> 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.label :content, class: "from-control col-10"%>
+    <%= form.text_field :content , class: "from-control col-12"%>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+<div class = "field  d-flex justify-content-center col-12 flex-wrap mt-3">  
+    <%= form.submit "投稿", class: "btn btn-primary col-3 "%>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    </div>
   </div>
 <% end %>
