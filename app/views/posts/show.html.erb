@@ -2,7 +2,7 @@
 <div class = "field  d-flex justify-content-center col-12 flex-wrap mt-5 text-center">
   <div class ="card col-6">  
 
-    <h3><%= @post.user.nickname %></h3>
+    <h3><a href="/users/<%= @post.user.id %>"><%= @post.user.nickname %></a></h3>
     <h3><%= @post.content %></h3>
     <div class = "row">
         <div class = "col-12">
