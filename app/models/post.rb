@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :comments
 
   attr_accessor :remove_image
-
+  validates :content, length: { maximum: 2000 }, presence: true
   before_save :remove_image_if_user_accept
 
   private
