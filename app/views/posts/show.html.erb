@@ -37,10 +37,10 @@
       <div>
         <%if !@post.user.nickname.presence%>
           <a>匿名</a>
-          <a>「<%= @post.content %>」</a>
+          <a>「<%= c.content %>」</a>
         <%else%>
           <a href="/users/<%= @post.user.id %>"><%= @post.user.nickname %></a>
-          <a>「<%= @post.content %>」</a>
+          <a>「<%= c.content %>」</a>
         <%end%>
         <hr>
       </div>
