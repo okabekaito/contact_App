@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* アプリの概要
 
-Things you may want to cover:
+ Twitterのように文字や画像を投稿ができるアプリケーション
 
-* Ruby version
+* 制作の背景・理由
 
-* System dependencies
+Twitterのような投稿アプリを作ってみたかったため。
+年末になるとラインの通信障害は起こることがあるので非常用に友達と連絡が取れるアプリがありと便利だなと思ったからです。
+ 
+* どんな機能を実装したか
 
-* Configuration
+ ログイン機能、投稿のcrud機能、いいね機能、投稿に対してコメント機能、ページネーション機能、画像の投稿ができます。
+　一覧ページには投稿者の名前と投稿内容、いいねの数が見れます。
+　投稿詳細ページにはいいねを押す機能、コメント機能、投稿した文と画像が見れます。
+　ユーザーページにはその人が投稿した内容、いいねした投稿が見れます。
+　新規登録時のニックネームを書かないで登録した場合、それぞれの名前が表示される所に匿名という名前がつきます
+ 
+* 技術選定理由
 
-* Database creation
+Web系のバックエンドの職種志望のためRuby on Railsを選びました。
+そもそもRubyを選んだ理由は日本ではRubyの方が扱っている会社が多く、日本人が作った言語のためコミュニティーが盛んでエラーの記事も多く解決しやすと考え選びました。
 
-* Database initialization
+* URL
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://peaceful-lowlands-98059.herokuapp.com/
