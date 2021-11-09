@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.page(params[:page]).per(7)
     @users = User.all
+    @like = Like.new
     
   end
 

@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   has_many :comments
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
 
   attr_accessor :remove_image
   validates :content, length: { maximum: 2000 }, presence: true

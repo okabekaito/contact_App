@@ -14,8 +14,9 @@
       <nav class="navbar  bg-secondary">
               <%=link_to"Contact App",posts_path,class: "navbar-brand text-white"%>
       <div class="d-flex flex-nowrap ">
-              <%= link_to "投稿する", new_post_path, class: "nav-link text-white text-cent"%><i class="fas fa-book-open text-white d-flex align-items-center mr-5"></i>
+              <%= link_to "投稿する", new_post_path, class: "nav-link text-white text-center"%><i class="fas fa-book-open text-white d-flex align-items-center mr-5"></i>
               <%= link_to "マイページへ", user_path(current_user.id) , class: "nav-link text-white "%>
+              <%= link_to "ユーザー一覧へ", users_path, class: "nav-link text-white text-center" %>
               <%= link_to "ログアウト", destroy_user_session_path, :method => :delete, class: "nav-link text-white " %>
         </ul>
       </div>

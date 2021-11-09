@@ -1,15 +1,28 @@
 <h1>ユーザー詳細ページ</h1>
 <div class = "field  d-flex justify-content-center col-12 flex-wrap mt-5">
-  <div class ="card col-6 text-center">  
-
+  <div class ="card col-6 text-center">
+    <%if !@user.nickname.presence%>
+    <h3>匿名さん</h3>
+    <%else%>
     <h3><%= @user.nickname %></h3>
-    <h2>投稿内容</h2>
+    <%end%>
+    <h2>投稿した内容</h2>
     <% @user.posts.each do |post| %>
       <p href="/posts/<%= post.id %>"><%= post.content %></p>
       <p><%= link_to '編集', edit_post_path(post) %></p>
       <hr>
     <% end %>
-    <%= link_to "ユーザー一覧へ", users_path %>
-    <%= link_to "ホームへ戻る", posts_path %>
+    <h3>いいねしている投稿</h3>
+        <% @user.liked_posts.each do |post| %>
+          <ul>
+              <%if !post.user.nickname.presence%>
+                <a>匿名さん</a>
+                「<%= post.content %>」
+              <%else%>
+                <%= post.user.nickname %>さん
+                「<%= post.content %>」
+              <%end%>
+        </ul>
+        <% end %>
   </div>
 </div>
